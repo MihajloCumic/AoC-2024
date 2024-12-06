@@ -8,8 +8,10 @@ public class Part2 {
     public static void main(String[] args) throws IOException {
         Lab lab = Lab.initializeLab();
         while(!lab.isNextStepOut()){
+            int currRow = lab.securityPosRow;
+            int currCol = lab.securityPosCol;
             lab.takeNextStep();
-            
+
        }
     }
 }
