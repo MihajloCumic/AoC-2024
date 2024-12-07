@@ -8,12 +8,7 @@ import java.util.List;
 
 public class Part1 {
     public static void main(String[] args) throws IOException {
-        List<Equation> equations = initializeEquations("resources/input-day-7.txt");
-        for(Equation equation: equations){
-            int spots = equation.numbers.length - 1;
-            traverseAllPermutations("", spots, equation);
-        }
-
+        List<Equation> equations = executePart1();
         long sum = 0;
         for(Equation equation: equations){
             if(equation.isSolvable){
@@ -21,6 +16,17 @@ public class Part1 {
             }
         }
         System.out.println(sum);
+
+    }
+    public static List<Equation> executePart1() throws IOException {
+        List<Equation> equations = initializeEquations("resources/input-day-7.txt");
+        for(Equation equation: equations){
+            int spots = equation.numbers.length - 1;
+            traverseAllPermutations("", spots, equation);
+        }
+
+        return equations;
+
 
     }
     private static void traverseAllPermutations(String current, int spots, Equation equation){
