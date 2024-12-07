@@ -2,10 +2,13 @@ package day7;
 
 public class Equation {
     long value;
-    int[] numbers;
+    long[] numbers;
+    boolean isSolvable = false;
 
-    public Equation(long value, int[] numbers) {
+    public Equation(long value, long[] numbers) {
         this.value = value;
         this.numbers = numbers;
     }
+
+
 }
