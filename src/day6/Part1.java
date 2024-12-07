@@ -5,7 +5,7 @@ import java.util.*;
 
 public class Part1 {
     public static void main(String[] args) throws IOException {
-        Lab lab = Lab.initializeLab();
+        Lab lab = Lab.initializeLab("resources/input-day-6.txt");
 
         Map<Integer, Set<Integer>> visitedRowCols = new HashMap<>();
         visitedRowCols.put(lab.securityPosRow,new HashSet<>(Set.of(lab.securityPosCol)));

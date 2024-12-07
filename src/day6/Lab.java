@@ -25,8 +25,8 @@ public class Lab {
         this.securityDirection = securityDirection;
     }
 
-    public static Lab initializeLab() throws IOException {
-        File inputFile = new File("resources/input-day-6.txt");
+    public static Lab initializeLab(String path) throws IOException {
+        File inputFile = new File(path);
 
         List<String> lines = new ArrayList<>();
         try (BufferedReader reader = new BufferedReader(new FileReader(inputFile))) {
@@ -106,8 +106,8 @@ public class Lab {
     void stepUp() {
         if (isUpStepOut()) return;
         if (charMatrix[securityPosRow - 1][securityPosCol] == OBSTRUCTION) {
-            securityPosCol += 1;
             securityDirection = RIGHT;
+            stepRight();
             return;
         }
         securityPosRow -= 1;
@@ -116,8 +116,8 @@ public class Lab {
     void stepDown() {
         if (isDownStepOut()) return;
         if (charMatrix[securityPosRow + 1][securityPosCol] == OBSTRUCTION) {
-            securityPosCol -= 1;
             securityDirection = LEFT;
+            stepLeft();
             return;
         }
         securityPosRow += 1;
@@ -126,8 +126,8 @@ public class Lab {
     void stepLeft() {
         if (isLeftStepOut()) return;
         if (charMatrix[securityPosRow][securityPosCol - 1] == OBSTRUCTION) {
-            securityPosRow -= 1;
             securityDirection = UP;
+            stepUp();
             return;
         }
         securityPosCol -= 1;
@@ -136,8 +136,8 @@ public class Lab {
     void stepRight() {
         if (isRightStepOut()) return;
         if (charMatrix[securityPosRow][securityPosCol + 1] == OBSTRUCTION) {
-            securityPosRow += 1;
             securityDirection = DOWN;
+            stepDown();
             return;
         }
         securityPosCol += 1;
