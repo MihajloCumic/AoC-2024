@@ -81,15 +81,10 @@ public class Solution {
             }
         }
 
-        System.out.println("Region: " + garden[region.get(0).row][region.get(0).col]);
         int section1 = numOfSectionsVertical(verLeft);
-        System.out.println(section1);
         int section2 = numOfSectionsVertical(verRight);
-        System.out.println(section2);
         int section3 =  numOfSectionsHorizontal(horAbove);
-        System.out.println(section3);
         int section4 = numOfSectionsHorizontal(horBelow);
-        System.out.println(section4);
         return section1 + section2 + section3 + section4;
 
 
